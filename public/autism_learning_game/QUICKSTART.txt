@@ -1,0 +1,101 @@
+# 🚀 QUICK START GUIDE
+
+## Files You Have:
+
+Three files in the `autism_learning_game` folder:
+- **index.html** ← OPEN THIS FILE
+- **style.css** (styling)
+- **game.js** (game logic)
+- **README.md** (full instructions)
+
+---
+
+## ⚡ How to Play (30 seconds setup)
+
+### On Windows:
+1. Go to: `C:\Users\Dell\Documents\Games_autism\autism_learning_game`
+2. **Double-click `index.html`**
+3. Game opens in your browser!
+4. Pick a game mode and start playing
+
+### On Mac/Linux:
+1. Open the folder
+2. Right-click `index.html` → Open With → Chrome/Firefox/Safari
+3. Play!
+
+---
+
+## 🎮 Game Instructions (Super Simple):
+
+1. **Pick a Game Mode:**
+   - 🔷 Shape Match
+   - 🎨 Color Match  
+   - 🔢 Count Numbers
+
+2. **Look at the top item**
+
+3. **Click the matching item below**
+
+4. **Get instant feedback!**
+   - ✓ = Correct! Next question
+   - ✗ = Try again! Keep going
+
+5. **Play 10 questions, then see your score!**
+
+6. **Click "Play Again" to choose another game mode**
+
+---
+
+## 🎯 What The Game Teaches:
+
+✅ Shape Recognition
+✅ Color Identification  
+✅ Counting & Numbers
+✅ Matching Skills
+✅ Attention & Focus
+
+---
+
+## 💡 Tips for Best Results:
+
+- **No time limit** - Take your time
+- **Wrong answers are OK** - Still learning!
+- **Celebrate the wins** - Cheer for correct answers
+- **Short sessions** - 10-15 minutes is perfect
+- **Friendly approach** - Make it fun, not stressful
+
+---
+
+## 🔧 Troubleshooting:
+
+- **Page won't load?** → Make sure all 3 files are together
+- **Buttons don't work?** → Try Chrome browser
+- **Looks weird?** → Zoom out (Ctrl+Minus)
+
+---
+
+## 🎨 Can You Change It?
+
+Yes! Edit these files with Notepad:
+
+**Change colors?** → Open `style.css` and find hex colors (#667eea)
+
+**Add more shapes?** → Open `game.js` and add to the "shapes" list
+
+**Change number of questions?** → Open `game.js` line 205, change "10" to your number
+
+---
+
+## ✨ Enjoy! 
+
+The game is designed to be:
+- 🎨 Colorful & engaging
+- 😊 Friendly & encouraging
+- 🚀 Easy to use
+- 📱 Works on any device
+
+**Just open index.html and have fun!**
+
+---
+
+Need help? Check the full README.md file for more details.

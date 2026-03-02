@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autism Learning Game - Color & Shape Match</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Learning Game</h1>
+            <div class="score-board">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="level">Level: <span id="level">1</span></div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Game Mode Selection -->
+            <div id="modeScreen" class="screen active">
+                <h2>Choose a Game</h2>
+                <div class="mode-buttons">
+                    <button class="mode-btn" onclick="startGame('shapes')">
+                        <div class="icon">🔷</div>
+                        <div>Shape Match</div>
+                    </button>
+                    <button class="mode-btn" onclick="startGame('colors')">
+                        <div class="icon">🎨</div>
+                        <div>Color Match</div>
+                    </button>
+                    <button class="mode-btn" onclick="startGame('numbers')">
+                        <div class="icon">🔢</div>
+                        <div>Count Numbers</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Play Screen -->
+            <div id="gameScreen" class="screen">
+                <div class="game-content">
+                    <div class="question-area">
+                        <h2>Find the Match</h2>
+                        <div id="targetItem" class="target-item"></div>
+                    </div>
+
+                    <div class="options-area">
+                        <div id="optionsContainer" class="options-grid"></div>
+                    </div>
+
+                    <div class="feedback" id="feedback"></div>
+                </div>
+
+                <button class="back-btn" onclick="goBack()">⬅ Back</button>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="resultsScreen" class="screen">
+                <div class="results-content">
+                    <h2 id="resultTitle">Great Job!</h2>
+                    <div id="resultMessage" class="result-message"></div>
+                    <div class="result-stats">
+                        <p>Final Score: <span id="finalScore">0</span></p>
+                        <p>Level Reached: <span id="finalLevel">1</span></p>
+                    </div>
+                    <button class="action-btn" onclick="returnToMenu()">Play Again</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

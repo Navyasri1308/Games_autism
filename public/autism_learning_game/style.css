@@ -1,0 +1,355 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 4px solid #667eea;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score, .level {
+    background: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: #667eea;
+}
+
+/* ===== SCREENS ===== */
+.screen {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== MODE SELECTION SCREEN ===== */
+#modeScreen h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.mode-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.mode-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.mode-btn:hover, .mode-btn:active {
+    transform: scale(1.08);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+.mode-btn .icon {
+    font-size: 3em;
+}
+
+/* ===== GAME SCREEN ===== */
+.game-content {
+    margin: 30px 0;
+}
+
+.question-area {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.question-area h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.target-item {
+    display: inline-block;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    border: 4px dashed #667eea;
+    font-size: 4em;
+    margin: 20px 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.options-area {
+    margin: 30px 0;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 20px;
+    padding: 25px;
+    cursor: pointer;
+    font-size: 2.5em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.option-btn:hover {
+    transform: scale(1.05);
+    border-color: #667eea;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.option-btn.correct {
+    background: #4ade80;
+    border-color: #4ade80;
+    animation: correctAnswer 0.6s ease;
+}
+
+.option-btn.incorrect {
+    background: #ef4444;
+    border-color: #ef4444;
+    animation: shake 0.5s ease;
+}
+
+@keyframes correctAnswer {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+.feedback {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    min-height: 50px;
+    margin: 20px 0;
+    animation: fadeInUp 0.5s ease;
+}
+
+.feedback.correct {
+    color: #4ade80;
+}
+
+.feedback.incorrect {
+    color: #ef4444;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.back-btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* ===== RESULTS SCREEN ===== */
+.results-content {
+    text-align: center;
+    padding: 30px;
+}
+
+.results-content h2 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.result-message {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.result-stats {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.result-stats p {
+    margin: 10px 0;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.action-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .score-board {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mode-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .target-item {
+        font-size: 3em;
+        padding: 20px;
+    }
+
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
