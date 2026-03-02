@@ -1,0 +1,161 @@
+/* ===== ALERTS STYLES ===== */
+
+.alerts-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.alert {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  animation: slideInRight 0.4s ease-out;
+  pointer-events: auto;
+  min-width: 300px;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== ALERT TYPES ===== */
+.alert-success {
+  border-left: 5px solid #4ECDC4;
+}
+
+.alert-error {
+  border-left: 5px solid #FF6B6B;
+}
+
+.alert-warning {
+  border-left: 5px solid #FFE66D;
+}
+
+.alert-info {
+  border-left: 5px solid #667eea;
+}
+
+/* ===== ALERT EMOJI ===== */
+.alert-emoji {
+  font-size: 2em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ===== ALERT CONTENT ===== */
+.alert-content {
+  flex: 1;
+}
+
+.alert-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.alert-message {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+/* ===== ALERT CLOSE BUTTON ===== */
+.alert-close {
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  border-radius: 5px;
+}
+
+.alert-close:hover {
+  background: #f0f0f0;
+  color: #333;
+  transform: scale(1.1);
+}
+
+/* ===== ANIMATED CLOSE ===== */
+.alert.closing {
+  animation: slideOutRight 0.3s ease-out forwards;
+}
+
+@keyframes slideOutRight {
+  to {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .alerts-container {
+    right: 10px;
+    top: 10px;
+    max-width: 90vw;
+  }
+
+  .alert {
+    min-width: auto;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .alert-title {
+    font-size: 1em;
+  }
+
+  .alert-message {
+    font-size: 0.9em;
+  }
+
+  .alert-emoji {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .alerts-container {
+    right: 5px;
+    top: 5px;
+    gap: 8px;
+  }
+
+  .alert {
+    padding: 12px;
+    min-width: auto;
+    width: calc(100vw - 10px);
+    gap: 10px;
+  }
+
+  .alert-emoji {
+    font-size: 1.3em;
+  }
+}
